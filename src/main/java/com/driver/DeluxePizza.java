@@ -18,4 +18,9 @@ public class DeluxePizza extends Pizza {
     public void addExtraToppings() {
 
     }
+
+    @Override
+    public void addTakeaway() {
+
+    }
 }
