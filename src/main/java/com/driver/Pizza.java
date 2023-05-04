@@ -66,10 +66,10 @@ public class Pizza {
         String bill = "";
         //System.out.println("Base Price Of The Pizza: " + basePizzaPrice);
         bill += "Base Price Of The Pizza: " + price1 + "\n";
-        if (isExtraCheeseAdded) {
+        if (isExtraCheeseAdded == true) {
             bill += "Extra Cheese Added: " + extraCheesePrice + "\n";
         }
-        if (isExtraToppingsAdded) {
+        if (isExtraToppingsAdded == true) {
             bill += "Extra Toppings Added: " + extraToppingPrice + "\n";
         }
         if (isOptedForTakeAway) {
