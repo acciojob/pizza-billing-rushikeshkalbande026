@@ -1,56 +1,71 @@
 package com.driver;
 
 public class Pizza {
-
+    private int price;
     private Boolean isVeg;
     private String bill;
+    private int basePizzaPrice;
+    private int extraCheesePrice = 80;
+    private int extraToppingPrice = 70;
+    private int paperbagPrice = 20;
+    private boolean isExtraCheeseAdded = false;
+    private boolean isExtraToppingsAdded = false;
+    private boolean isOptedForTakeAway = false;
 
-    private int topping = 0, cheese = 0, paper = 0, price=0;
-
-    public Pizza(Boolean isVeg){
+    public Pizza(Boolean isVeg) {
         this.isVeg = isVeg;
-        if(isVeg){
-            price = 300;
-        }
-        else
-            price = 400;
-        bill = "";
         // your code goes here
+        if (this.isVeg) {
+            this.price = 300;
+        } else {
+            this.price = 400;
+            bill = "";
+        }
+        basePizzaPrice = this.price;
+
     }
 
-    public int getPrice(){
+    public int getPrice() {
         return this.price;
     }
-    public void setPrice(int price){
-        this.price = price;
+
+    public void addExtraCheese() {
+        // your code goes here
+        isExtraCheeseAdded = true;
+        // System.out.println("Extra cheese added");
+        this.price += extraCheesePrice;
     }
 
-    public void addExtraCheese(){
-        cheese = cheese + 80;
+    public void addExtraToppings() {
         // your code goes here
+        isExtraToppingsAdded = true;
+        //System.out.println("Extra toppings added");
+        this.price += extraToppingPrice;
     }
 
-    public void addExtraToppings(){
-        topping = topping + 70;
+    public void addTakeaway() {
         // your code goes here
+        isOptedForTakeAway = true;
+        // System.out.println("Take away opted");
+        this.price += paperbagPrice;
+
     }
 
-    public void addTakeaway(){
-        paper = paper + 20;
+    public String getBill() {
         // your code goes here
-    }
-
-    public String getBill(){
-        // your code goes here
-        bill = "Base Price Of The Pizza: " + price + "\n";
-        if(cheese != 0)
-            bill = bill + "Extra Cheese Added: " + cheese + "\n";
-        if(topping != 0)
-            bill = bill + "Extra Toppings Added: " + topping + "\n";
-        if(paper != 0)
-            bill = bill + "Paperbag Added: " + paper + "\n";
-        price = price + cheese + topping + paper;
-        bill = bill + "Total Price: " + price + "";
+        String bill = "";
+        System.out.println("Base Price Of The Pizza: " + basePizzaPrice);
+        if (isExtraCheeseAdded) {
+            bill += "Extra Cheese Added: " + extraCheesePrice + "\n";
+        }
+        if (isExtraToppingsAdded) {
+            bill += "Extra Toppings Added: " + extraToppingPrice + "\n";
+        }
+        if (isOptedForTakeAway) {
+            bill += "Paperbag Added: " + paperbagPrice + "\n";
+        }
+        bill += "Total Price: " + this.price + "\n";
+        System.out.println(bill);
         return this.bill;
     }
 }
