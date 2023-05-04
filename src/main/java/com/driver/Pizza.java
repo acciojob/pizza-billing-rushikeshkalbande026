@@ -35,20 +35,26 @@ public class Pizza {
 
     public void addExtraCheese() {
         // your code goes here
-        isExtraCheeseAdded = true;
+        if(isExtraCheeseAdded == false){
         // System.out.println("Extra cheese added");
         this.price += extraCheesePrice;
+        isExtraCheeseAdded = true;
+        }
     }
 
     public void addExtraToppings() {
         // your code goes here
-        isExtraToppingsAdded = true;
-        //System.out.println("Extra toppings added");
-        if (this.isVeg) {
-            this.price += extraToppingPrice;
-        } else {
-            this.price += extraToppingPriceNV;
-            //bill = "";
+        if(isExtraCheeseAdded == false) {
+
+            //System.out.println("Extra toppings added");
+            if (this.isVeg) {
+                this.price += extraToppingPrice;
+            } else {
+                this.price += extraToppingPriceNV;
+                //bill = "";
+
+            }
+            isExtraToppingsAdded = true;
         }
        // this.price += extraToppingPrice;
     }
