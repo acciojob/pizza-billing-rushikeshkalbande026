@@ -50,7 +50,7 @@ public class Pizza {
             this.price += extraToppingPriceNV;
             //bill = "";
         }
-        this.price += extraToppingPrice;
+       // this.price += extraToppingPrice;
     }
 
     public void addTakeaway() {
