@@ -20,6 +20,7 @@ public class Pizza {
             this.price = 300;
         }else{
             this.price = 400;
+            bill = "";
         }
         basePizzaPrice = this.price;
 
