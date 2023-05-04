@@ -3,24 +3,15 @@ package com.driver;
 public class DeluxePizza extends Pizza {
 
     public DeluxePizza(Boolean isVeg) {
-        super(isVeg);
-        // your code goes here
-        super.addExtraCheese();
-        super.addExtraToppings();
-    }
+        // public DeluxePizza(Boolean isVeg){
+            super(isVeg);
+            // your code goes here
+            if(isVeg) {
+                super.setPrice(super.getPrice() + 150);
+            }
+            else{
+                super.setPrice(super.getPrice() + 200);
+            }
+        }
 
-    @Override
-    public void addExtraCheese() {
-
-    }
-
-    @Override
-    public void addExtraToppings() {
-
-    }
-
-    @Override
-    public void addTakeaway() {
-
-    }
 }
