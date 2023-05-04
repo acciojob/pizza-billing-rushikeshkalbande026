@@ -19,7 +19,7 @@ public class Pizza {
             this.price = 300;
         } else {
             this.price = 400;
-            bill = "";
+            //bill = "";
         }
         basePizzaPrice = this.price;
 
