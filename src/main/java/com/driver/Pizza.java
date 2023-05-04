@@ -2,6 +2,7 @@ package com.driver;
 
 public class Pizza {
     private int price;
+    private int price1;
     private Boolean isVeg;
     private String bill;
     private int basePizzaPrice;
@@ -17,8 +18,10 @@ public class Pizza {
         // your code goes here
         if (this.isVeg) {
             this.price = 300;
+            this.price1 = 300;
         } else {
             this.price = 400;
+            this.price1 = 400;
             //bill = "";
         }
         basePizzaPrice = this.price;
@@ -55,7 +58,7 @@ public class Pizza {
         // your code goes here
         String bill = "";
         //System.out.println("Base Price Of The Pizza: " + basePizzaPrice);
-        bill += "Base Price Of The Pizza: " + price + "\n";
+        bill += "Base Price Of The Pizza: " + price1 + "\n";
         if (isExtraCheeseAdded) {
             bill += "Extra Cheese Added: " + extraCheesePrice + "\n";
         }
