@@ -8,6 +8,7 @@ public class Pizza {
     private int basePizzaPrice;
     private int extraCheesePrice = 80;
     private int extraToppingPrice = 70;
+    private int extraToppingPriceNV = 120;
     private int paperbagPrice = 20;
     private boolean isExtraCheeseAdded = false;
     private boolean isExtraToppingsAdded = false;
@@ -43,6 +44,12 @@ public class Pizza {
         // your code goes here
         isExtraToppingsAdded = true;
         //System.out.println("Extra toppings added");
+        if (this.isVeg) {
+            this.price += extraToppingPrice;
+        } else {
+            this.price += extraToppingPriceNV;
+            //bill = "";
+        }
         this.price += extraToppingPrice;
     }
 
